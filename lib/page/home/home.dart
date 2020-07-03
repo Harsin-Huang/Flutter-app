@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../store/index.dart' show Store, CounterModel;
+import 'package:flutterapp/store/index.dart' show Store, CounterModel;
 
 class MainPage extends StatelessWidget {
   @override

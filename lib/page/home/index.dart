@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
-import '../store/index.dart' show Store, CounterModel;
+import 'package:flutterapp/store/index.dart' show Store, CounterModel;
+import 'package:flutterapp/router/index.dart' show FluroRouter; //路由
 import 'home.dart';
 import 'list.dart';
 import 'about.dart';
 
 
 class MainAPP extends StatefulWidget {
+  MainAPP() {
+    FluroRouter.initRouter();
+  }
   @override
   createState() => new MainAPPState();
 }

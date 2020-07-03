@@ -1,12 +1,4 @@
-import 'package:dio/dio.dart'
-    show
-        Dio,
-        DioError,
-        Options,
-        InterceptorsWrapper,
-        RequestOptions,
-        LogInterceptor,
-        Response;
+import 'package:dio/dio.dart';
 import 'localStorage.dart' show LocalStorage;
 
 Dio getDio({options, loading}) {

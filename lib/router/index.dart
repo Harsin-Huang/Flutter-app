@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
-
-import 'package:flutterapp/page/index.dart' show MainAPP;
-import 'package:flutterapp/page/details.dart' show DetailsPage;
+import './route_handlers.dart';
 import 'package:flutterapp/page/empty.dart' show EmptyPage;
 
 class FluroRouter {
@@ -15,27 +13,9 @@ class FluroRouter {
           return EmptyPage();
         },
       );
-      // 首页
-      router.define(
-        '/',
-        handler: Handler(
-          handlerFunc: (BuildContext context, Map<String, dynamic> params) {
-            return MainAPP();
-          },
-        ),
-      );
-      // 详情页面
-      router.define(
-        '/details',
-        handler: Handler(
-          handlerFunc: (BuildContext context, Map<String, List<String>> params) {
-            String detailsId = params['id'].first;
-             return DetailsPage(
-                detailsId: int.parse('$detailsId')
-             );
-          }
-        )
-      );
+
+      router.define('/', handler: homeHandler);
+      router.define('/details',handler: detailsHandler);
 
       return router;
   }
